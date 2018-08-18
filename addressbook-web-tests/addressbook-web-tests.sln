@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.28010.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "addressbook-web-tests", "addressbook-web-tests\addressbook-web-tests.csproj", "{3E34E88C-5A3D-43EF-A1EB-B93C07D5FD41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "addressbook-test-data-generators", "addressbook-test-data-generators\addressbook-test-data-generators.csproj", "{B61BA03F-0660-4940-AC7B-851B5A7F6139}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDataGeneratorContact", "TestDataGeneratorContact\TestDataGeneratorContact.csproj", "{08E16FA5-E53D-4265-8800-65698F17C3BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDataGeneratorContacts", "TestDataGeneratorContacts\TestDataGeneratorContacts.csproj", "{0777B04C-0CDF-427B-945B-5920F66C79D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web-AddressBookTestDataGenerators", "Web-AddressBookTestDataGenerators\Web-AddressBookTestDataGenerators.csproj", "{D7C792AF-1661-416A-9172-142670942776}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{3E34E88C-5A3D-43EF-A1EB-B93C07D5FD41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E34E88C-5A3D-43EF-A1EB-B93C07D5FD41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E34E88C-5A3D-43EF-A1EB-B93C07D5FD41}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B61BA03F-0660-4940-AC7B-851B5A7F6139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B61BA03F-0660-4940-AC7B-851B5A7F6139}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B61BA03F-0660-4940-AC7B-851B5A7F6139}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B61BA03F-0660-4940-AC7B-851B5A7F6139}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0777B04C-0CDF-427B-945B-5920F66C79D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0777B04C-0CDF-427B-945B-5920F66C79D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0777B04C-0CDF-427B-945B-5920F66C79D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0777B04C-0CDF-427B-945B-5920F66C79D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08E16FA5-E53D-4265-8800-65698F17C3BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08E16FA5-E53D-4265-8800-65698F17C3BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08E16FA5-E53D-4265-8800-65698F17C3BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08E16FA5-E53D-4265-8800-65698F17C3BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C792AF-1661-416A-9172-142670942776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C792AF-1661-416A-9172-142670942776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C792AF-1661-416A-9172-142670942776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C792AF-1661-416A-9172-142670942776}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

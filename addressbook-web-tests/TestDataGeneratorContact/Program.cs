@@ -48,7 +48,7 @@ namespace testdatageneratorcontacts
 
             writer.Close();
         }
-       
+
         static void writeContactsToXmlFile(List<ContactData> contacts, StreamWriter writer)
         {
             new XmlSerializer(typeof(List<ContactData>)).Serialize(writer, contacts);
