@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace WebAddressbookTests
 {
     [TestFixture]
-   public  class GroupModificationTests : AuthTestBase
+   public  class GroupModificationTests : GroupTestBase
     {
         [Test]
         public void GroupModificationTest()
@@ -17,13 +17,13 @@ namespace WebAddressbookTests
             app.Groups.CheckGroupExistance();
 
             List<GroupData> oldGroups = GroupData.GetAll();
-            GroupData tobeRemoved = oldGroups[0];
+            GroupData tobeModified = oldGroups[0];
 
             GroupData newData = new GroupData("zzz");
             newData.Footer = null; //если укажем null то с полем не выполняется никаких действий: не очистки ни заполнения
             newData.Header = null;
 
-            app.Groups.Modify(tobeRemoved, newData);
+            app.Groups.Modify(tobeModified, newData);
 
             Assert.AreEqual(oldGroups.Count, app.Groups.GetGroupCount());
 
@@ -37,7 +37,7 @@ namespace WebAddressbookTests
 
             foreach (GroupData group in newGroups)
             {
-                if (group.Id == tobeRemoved.Id) // та группа которую мы модифицировали
+                if (group.Id == tobeModified.Id) // та группа которую мы модифицировали
                 {
                     Assert.AreEqual(newData.Name, group.Name);
                 }

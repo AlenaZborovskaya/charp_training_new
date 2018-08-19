@@ -52,9 +52,10 @@ namespace WebAddressbookTests
         public static IEnumerable<ContactData> ContactDataFromJsonFile()
         {
 
+            //return JsonConvert.DeserializeObject<List<ContactData>>(
+            //    File.ReadAllText(@"contacts.json"));
             return JsonConvert.DeserializeObject<List<ContactData>>(
-                File.ReadAllText(@"contacts.json"));
-
+                File.ReadAllText(Path.Combine(TestContext.CurrentContext.TestDirectory , @"contacts.json")));
         }
 
 
@@ -65,13 +66,13 @@ namespace WebAddressbookTests
         {
 
 
-            List<ContactData> oldContacts = app.Contacts.GetContactList();
+            List<ContactData> oldContacts = ContactData.GetAll(); 
 
             app.Contacts.Create(contact);
 
             Assert.AreEqual(oldContacts.Count + 1, app.Contacts.GetContactCount());
 
-            List<ContactData> newContacts = app.Contacts.GetContactList();
+            List<ContactData> newContacts = ContactData.GetAll();
             oldContacts.Add(contact);
             oldContacts.Sort();
             newContacts.Sort();

@@ -17,7 +17,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 namespace WebAddressbookTests
 {
     [TestFixture]
-    public class GroupCreationTests : AuthTestBase
+    public class GroupCreationTests : GroupTestBase
 
     {
         public static IEnumerable<GroupData> RandomGroupDataProvider()
@@ -72,8 +72,8 @@ namespace WebAddressbookTests
 
             List<GroupData> groups = new List<GroupData>();
             Excel.Application app = new Excel.Application();
-            //Excel.Workbook wb = app.Workbooks.Open(Path.Combine(TestContext.CurrentContext.TestDirectory, @"groups.xlsx"));
-            Excel.Workbook wb = app.Workbooks.Open(Path.Combine(Directory.GetCurrentDirectory(), @"groups.xlsx"));
+            Excel.Workbook wb = app.Workbooks.Open(Path.Combine(TestContext.CurrentContext.TestDirectory, @"groups.xlsx"));
+            //Excel.Workbook wb = app.Workbooks.Open(Path.Combine(Directory.GetCurrentDirectory(), @"groups.xlsx"));
             Excel.Worksheet sheet = wb.ActiveSheet;
             Excel.Range range = sheet.UsedRange;
             for (int i = 1; i <= range.Rows.Count; i++)
@@ -143,16 +143,10 @@ namespace WebAddressbookTests
         [Test]
         public void TestDBConnectivity()
         {
-            DateTime start = DateTime.Now;
-            List<GroupData> fromUi = app.Groups.GetGroupList();
-            DateTime end = DateTime.Now;
-            System.Console.Out.WriteLine(end.Subtract(start));
-
-
-            start = DateTime.Now;
-            List<GroupData> fromDb = GroupData.GetAll();
-            end = DateTime.Now;
-            System.Console.Out.WriteLine(end.Subtract(start));
+            foreach (ContactData contact in ContactData.GetAll())
+            {
+                System.Console.Out.WriteLine(contact.Deprecated);
+            }
         }
     }
 }

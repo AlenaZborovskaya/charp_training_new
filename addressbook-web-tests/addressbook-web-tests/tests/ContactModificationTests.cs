@@ -22,23 +22,28 @@ namespace WebAddressbookTests
             newContact.HomePhone = null;
             newContact.MobilePhone = null;
             newContact.WorkPhone = null;
+            newContact.Fax = null;
+            newContact.Email = null;
+            newContact.Email2 = null;
+            newContact.Email3 = null;
 
-            List<ContactData> oldContacts = app.Contacts.GetContactList();
-            ContactData oldData = oldContacts[0];
+            List<ContactData> oldContacts = ContactData.GetAll();
+            ContactData tobeModified = oldContacts[0];
 
-            app.Contacts.Modifycontact(0, newContact);
+            app.Contacts.Modify(tobeModified, newContact);
 
             Assert.AreEqual(oldContacts.Count, app.Contacts.GetContactCount());
 
-            List<ContactData> newContacts = app.Contacts.GetContactList();
-            oldContacts[0].Firstname = newContact.Firstname;
+            List<ContactData> newContacts = ContactData.GetAll();
+
+            tobeModified.Firstname = newContact.Firstname;
             oldContacts.Sort();
             newContacts.Sort();
             Assert.AreEqual(oldContacts, newContacts);
 
             foreach (ContactData contact in newContacts)
             {
-                if (contact.Id == oldData.Id) // контакт, который мы модифицировали
+                if (contact.Id == tobeModified.Id) // контакт, который мы модифицировали
                 {
                     Assert.AreEqual(newContact.Firstname, contact.Firstname);
                 }
